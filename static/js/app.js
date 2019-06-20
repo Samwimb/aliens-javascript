@@ -15,7 +15,7 @@ var searchBtn = d3.select("#filter-btn");
 searchBtn.on("click", handleSearchButtonClick);
 
 function buildtable(ufo_data){
-
+// clear current table
 tbody.html("");
 
 ufo_data.forEach(function(sighting) {
