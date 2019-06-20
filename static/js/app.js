@@ -38,18 +38,21 @@ function handleSearchButtonClick() {
 
     d3.event.preventDefault();
 
-    // Format the user's search by removing leading and trailing whitespace, lowercase the string
-    // var filterDateTime = $timeInput.value.trim().toLowerCase();
-    // var filterCity = $cityInput.value.trim().toLowerCase();
-    // var filterCountry = $countryInput.value.trim().toLowerCase();
-    // var filterState = $stateInput.value.trim().toLowerCase();
-    // var filterShape = $shapeInput.value.trim().toLowerCase();
+    // ***assumes user enters info w/ same format as data***
+    // ***variables below allow the user to enter caps***
+    // var filterDateTime = timeInput.property("value");
+    // var filterCity = cityInput.property("value");
+    // var filterCountry = countryInput.property("value");
+    // var filterState = stateInput.property("value");
+    // var filterShape = shapeInput.property("value");
 
-    var filterDateTime = timeInput.property("value");
-    var filterCity = cityInput.property("value");
-    var filterCountry = countryInput.property("value");
-    var filterState = stateInput.property("value");
-    var filterShape = shapeInput.property("value");
+    // Format the user's search by removing leading and trailing whitespace, lowercase the string
+    var filterDateTime = timeInput.property("value").trim().toLowerCase();
+    var filterCity = cityInput.property("value").trim().toLowerCase();
+    var filterCountry = countryInput.property("value").trim().toLowerCase();
+    var filterState = stateInput.property("value").trim().toLowerCase();
+    var filterShape = shapeInput.property("value").trim().toLowerCase();
+
   
     // Set filteredDataSet to an array of all data whose fields matches the filter
     filteredData = data.filter(function(alienData) {
@@ -73,7 +76,8 @@ function handleSearchButtonClick() {
 
 
 
-// ******level 1********
+// ***level 1 (date filter only)***
+// ***HTML needs an update to remove other filter options is this version is utilized***
 
 // var submit = d3.select("#filter-btn");
 
@@ -84,17 +88,9 @@ function handleSearchButtonClick() {
     
 //     // Select the input element and get the raw HTML node
 //     var inputElement = d3.select("#datetime");
-//     // var city = d3.select("#city")
-//     // var city = d3.select("#city")
-//     // var city = d3.select("#city")
-//     // var city = d3.select("#city")
   
 //     // Get the value property of the input element
 //     var inputValue = inputElement.property("value");
-//     // var inputValue = inputElement.property("value");
-//     // var inputValue = inputElement.property("value");
-//     // var inputValue = inputElement.property("value");
-//     // var inputValue = inputElement.property("value");
   
 //     console.log(inputValue);
 
@@ -106,7 +102,9 @@ function handleSearchButtonClick() {
 //   });
 
 
-// ******level 2 (Basic)********
+// ***level 2 (approach using this)***
+// ***filters update on change instead of click***
+// ***would need to add a reset table button for this approach to be useful to an end user***
 
 // var filters = {};
 
